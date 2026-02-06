@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using MvcSegundaPracticaAPD.Models;
 using System.Data;
 
@@ -56,7 +56,7 @@ namespace MvcSegundaPracticaAPD.Repositories
         public int GetMaxId()
         {
             var consulta = (from datos in this.tablaComics.AsEnumerable()
-                           select datos.Field<int>("IDCOMIC")).Max();
+                           select datos.Field<int>("IDCOMIC")).Max(x => x.Field<int>("IDCOMIC"));
             return consulta;
         }
         public void CreateComic(Comic comic)
