@@ -1,0 +1,28 @@
+﻿@model List<Comic>
+<h1>Lista Comics</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>IdComic</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var comic in Model)
+        {
+            <tr>
+                <td>@comic.IdComic</td>
+                <td>@comic.Nombre</td>
+                <td><img src="@comic.Imagen" style="width:100px; height:60px;"/></td>
+                <td>@comic.Descripcion</td>
+                <td>
+                    <a asp-controller="Comics" asp-action="Details" asp-route-id="@comic.IdComic" class="btn btn-outline-primary">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

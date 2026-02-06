@@ -1,0 +1,21 @@
+﻿@model Comic
+<h1>Detalle Comic</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>IdComic</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>@Model.IdComic</td>
+                <td>@Model.Nombre</td>
+            <td><img src="@Model.Imagen" style="width:100px; height:60px;" /></td>
+                <td>@Model.Descripcion</td>
+            </tr>
+    </tbody>
+</table>
